@@ -1,4 +1,10 @@
 # --------------------------------------
+# venmos.com
+# venmos@fuck.gfw.es
+# zshrc
+# --------------------------------------
+
+# --------------------------------------
 # zsh
 # --------------------------------------
 export ZSH=$HOME/.oh-my-zsh
@@ -41,4 +47,6 @@ alias ls='gls --color=auto'
 alias dir='gdir --color=auto'
 alias grep='grep --color=auto'
 alias git="hub"
-
+# --------------------------------------
+# zsh end here
+# --------------------------------------
