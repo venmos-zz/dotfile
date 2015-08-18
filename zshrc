@@ -1,52 +1,44 @@
-# ------------------------------------------------------------------------------
-# Venom's Oh-My-Zsh Configure
-# Web Sites : http://venmos.com
-# Contact : venmos[at]fuck.gfw.es
-# ------------------------------------------------------------------------------
-
-
-LANG=en_US.UTF-8
-LC_ALL=en_US.UTF-8
-
+# --------------------------------------
+# zsh
+# --------------------------------------
 export ZSH=$HOME/.oh-my-zsh
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="venmos"
 source $ZSH/oh-my-zsh.sh
+ZSH_THEME="nebirhos"
 plugins=(git emacs rails ruby gem pow brew github osx rvm rake autojump bundler mysql zsh-syntax-highlighting)
-
-CASE_SENSITIVE="true"
-
-DISABLE_AUTO_UPDATE="true"
-
+# --------------------------------------
+# path
+# --------------------------------------
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin"
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-unsetopt correct_all
-
-export EDITOR=e
-
-export SAVEHIST=$HISTSIZE
-
-setopt EXTENDED_HISTORY
-
-export HISTSIZE=2000
-
-export HISTFILE="$HOME/.zshhistory"
-
-autoload -U compinit
+# --------------------------------------
+# config
+# --------------------------------------
+LANG=zh_CN.UTF-8
+LC_ALL=zh_CN.UTF-8
 compinit
+zle -N self-insert url-quote-magic
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+unsetopt correct_all
+autoload -U compinit
+autoload -U url-quote-magic
+setopt EXTENDED_HISTORY
 setopt AUTOLIST
 setopt AUTOMENU
 setopt MENU_COMPLETE
 setopt AUTOPUSHD
+export EDITOR=e
+export SAVEHIST=$HISTSIZE
+export HISTSIZE=2000
+export HISTFILE="$HOME/.zshhistory"
+CASE_SENSITIVE="true"
+DISABLE_AUTO_UPDATE="true"
+# --------------------------------------
+# alias
+# --------------------------------------
+alias e="emacsclient"
+alias lg="gls -al | grep "
+alias ls='gls --color=auto'
+alias dir='gdir --color=auto'
+alias grep='grep --color=auto'
+alias git="hub"
 
-autoload -U url-quote-magic
-zle -N self-insert url-quote-magic
-
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
-
-hash -d _project="/Users/venmos/Project.localized"
-
-alias loadzshconfig='source ~/.zshrc'
-alias e="emacs -Q $*"
