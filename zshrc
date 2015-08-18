@@ -3,19 +3,17 @@
 # venmos@fuck.gfw.es
 # zshrc
 # --------------------------------------
-
-# --------------------------------------
-# zsh
-# --------------------------------------
-export ZSH=$HOME/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
-ZSH_THEME="nebirhos"
-plugins=(git emacs rails ruby gem pow brew github osx rvm rake autojump bundler mysql zsh-syntax-highlighting)
-# --------------------------------------
 # path
 # --------------------------------------
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# --------------------------------------
+# oh-my-zsh
+# --------------------------------------
+export ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="nebirhos"
+plugins=(git emacs rails ruby gem pow brew github osx rvm rake autojump bundler mysql zsh-syntax-highlighting)
+source $ZSH/oh-my-zsh.sh
 # --------------------------------------
 # config
 # --------------------------------------
