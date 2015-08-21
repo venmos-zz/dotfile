@@ -1,0 +1,33 @@
+" Venom ~/.vimperatorrc
+
+" 退出
+noremap q <d>
+" 搜索
+noremap <C-s> /
+" 复制
+noremap w <y>
+noremap W <Y>
+" 粘贴
+noremap y <p>
+noremap Y <P>
+" 切换标签页
+noremap } <gt>
+noremap { <gT>
+" 搜索上下
+noremap > <n>
+noremap < <N>
+" 上/下一页
+noremap n <PageDown>
+noremap p <PageUp>
+" 使用字母标识超链接
+set hintchars=abcdefghijklmnopqrstuvwxyz
+" 主题颜色
+colorscheme desert
+" 链接字体大小
+highlight Hint font-size:120%;color:white;background-color:red;padding:1px;
+" 命令打开窗口都是新标签
+set newtab=all
+" 默认编辑器
+set editor=emacsclient
+" 保存 10000 条历史记录
+set history=10000
