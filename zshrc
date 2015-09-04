@@ -1,5 +1,4 @@
 # Path to your oh-my-zsh installation.
-export LC_ALL=zh_CN.UTF-8
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -50,18 +49,18 @@ ZSH_THEME="miloshadzic"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx brew autojump emacs)
+plugins=(git osx brew autojump)
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-[[ -s /usr/local/Cellar/nvm/0.26.0/nvm.sh ]] && . /usr/local/Cellar/nvm/0.26.0/nvm.sh
+[[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
 
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=zh_CN.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -86,3 +85,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lg="ls -al | grep"
 alias e="emacsclient"
+alias pag="ps aux | grep"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
