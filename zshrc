@@ -53,6 +53,7 @@ plugins=(git osx brew autojump)
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
@@ -86,5 +87,4 @@ export LANG=zh_CN.UTF-8
 alias lg="ls -al | grep"
 alias e="emacsclient"
 alias pag="ps aux | grep"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+alias fgpg="gpg -ea -r 4A2C5A73"
