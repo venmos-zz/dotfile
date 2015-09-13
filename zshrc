@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="miloshadzic"
+ZSH_THEME="odin"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -88,3 +88,21 @@ alias lg="ls -al | grep"
 alias e="emacsclient"
 alias pag="ps aux | grep"
 alias fgpg="gpg -ea -r 4A2C5A73"
+alias vpnon="proximac start ~/.proximac &"
+alias vpnoff="proximac stop"
+
+# percol
+function exists { which $1 &> /dev/null }
+
+if exists percol; then
+    function percol_select_history() {
+        local tac
+        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+        BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
+        CURSOR=$#BUFFER         # move cursor
+        zle -R -c               # refresh
+    }
+
+    zle -N percol_select_history
+    bindkey '^R' percol_select_history
+fi
