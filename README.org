@@ -1,4 +1,2 @@
-venmos shell config.
+@venmos dotfile
 
-
-[[tmux.png]]
