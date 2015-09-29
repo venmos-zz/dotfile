@@ -49,7 +49,7 @@ ZSH_THEME="venmos"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx brew autojump vi-mode)
+plugins=(git osx brew autojump)
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -62,7 +62,7 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=zh_CN.UTF-8
-export LC_ALL=zh_CN.UTF-8
+#export LC_ALL=zh_CN.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
